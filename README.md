@@ -46,14 +46,13 @@
 - ✅ Оптимизированная производительность
 - ✅ Конфигурационные файлы для настройки
 - ✅ Команды для администраторов
-- ✅ Интеграция с существующей системой погоды Minecraft
 
 ## Установка
 
 ### Системные требования
 
 - **Minecraft**: 1.20.1
-- **Minecraft Forge**: 47.2.0 или выше
+- **Minecraft Forge**: 47.2.0 или выше (Скоро будет Fabric версия)
 - **Java**: 17 или выше
 
 ### Пошаговая установка
@@ -161,49 +160,10 @@ cd enhanced-weather-mod
 - `lightning_frequency`: Частота молний для бури
 - `particle_count`: Количество частиц
 
-## Совместимость
-
-### Поддерживаемые моды
-
-- ✅ Любые моды, добавляющие новые биомы
-- ✅ Моды на климат и погоду (частичная совместимость)
-- ✅ Моды на оптимизацию (OptiFine, Sodium)
-
 ### Известные проблемы
 
 - Моды, полностью переписывающие систему погоды, могут конфликтовать
 - На слабых компьютерах может снижаться FPS во время бури
-
-## Разработка
-
-### Структура проекта
-
-```
-src/main/java/com/anmitalidev/enhancedweather/
-├── EnhancedWeatherMod.java     # Главный класс мода
-├── weather/                    # Система погоды
-│   ├── WeatherManager.java     # Менеджер погоды
-│   ├── StormWeather.java       # Логика бури
-│   ├── LightRainWeather.java   # Логика слабого дождя
-│   └── FloodWeather.java       # Логика паводка
-├── client/                     # Клиентская часть
-│   ├── WeatherRenderer.java    # Рендеринг эффектов
-│   └── WeatherSounds.java      # Звуковые эффекты
-├── events/                     # Обработчики событий
-│   └── WeatherEventHandler.java
-└── commands/                   # Команды
-    └── WeatherCommands.java
-```
-
-### API для других модов
-
-```java
-// Получить текущую погоду
-WeatherManager.WeatherType weather = WeatherManager.getCurrentWeather(serverLevel);
-
-// Установить погоду
-WeatherManager.setWeather(serverLevel, WeatherManager.WeatherType.STORM);
-```
 
 ## Лицензия
 
