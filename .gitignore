@@ -1,0 +1,53 @@
+# Gradle
+.gradle/
+build/
+out/
+classes/
+
+# Eclipse
+.project
+.metadata
+.classpath
+.settings/
+*.launch
+
+# IntelliJ
+*.ipr
+*.iws
+*.iml
+.idea/
+
+# NetBeans
+nb-configuration.xml
+
+# Visual Studio Code
+.vscode/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Minecraft Development Kit
+run/
+logs/
+
+# Generated sources
+src/generated/
+
+# Backup files
+*.bak
+*.tmp
+*.temp
+
+# Compiled class files
+*.class
+
+# JAR files
+*.jar
+!gradle/wrapper/gradle-wrapper.jar
+
+# Log files
+*.log
+
+# Test output
+test-output/

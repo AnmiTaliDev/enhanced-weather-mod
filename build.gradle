@@ -1,0 +1,79 @@
+plugins {
+    id 'eclipse'
+    id 'maven-publish'
+    id 'net.minecraftforge.gradle' version '5.1.+'
+}
+
+version = '1.0.0'
+group = 'com.anmitalidev.enhancedweather'
+archivesBaseName = 'enhanced-weather-mod'
+
+// Используем Java 17
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+
+minecraft {
+    // Используем официальные маппинги
+    mappings channel: 'official', version: '1.20.1'
+
+    runs {
+        client {
+            workingDirectory project.file('run')
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+
+            mods {
+                enhancedweather {
+                    source sourceSets.main
+                }
+            }
+        }
+
+        server {
+            workingDirectory project.file('run')
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+
+            mods {
+                enhancedweather {
+                    source sourceSets.main
+                }
+            }
+        }
+    }
+}
+
+repositories {
+    // Основные репозитории
+    mavenCentral()
+    maven {
+        name = 'MinecraftForge'
+        url = 'https://maven.minecraftforge.net'
+    }
+}
+
+dependencies {
+    // Minecraft Forge
+    minecraft 'net.minecraftforge:forge:1.20.1-47.2.0'
+}
+
+// Задачи для создания jar файлов
+jar {
+    manifest {
+        attributes([
+            "Specification-Title": "Enhanced Weather Mod",
+            "Specification-Vendor": "AnmiTaliDev",
+            "Specification-Version": "1",
+            "Implementation-Title": project.name,
+            "Implementation-Version": "${version}",
+            "Implementation-Vendor": "AnmiTaliDev",
+            "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+        ])
+    }
+}
+
+// Финализация jar с reobfJar
+jar.finalizedBy('reobfJar')
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}

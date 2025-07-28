@@ -1,0 +1,41 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="Apache-2.0"
+issueTrackerURL="https://github.com/AnmiTaliDev/enhanced-weather-mod/issues"
+
+[[mods]]
+modId="enhancedweather"
+version="1.0.0"
+displayName="Enhanced Weather Mod"
+updateJSONURL=""
+displayURL="https://github.com/AnmiTaliDev/enhanced-weather-mod"
+logoFile=""
+credits="AnmiTaliDev"
+authors="AnmiTaliDev <anmitali198@gmail.com>"
+description='''
+Enhanced Weather Mod добавляет новые типы погоды в Minecraft:
+- Буря с усиленными молниями и ветром
+- Слабый дождь с пониженной интенсивностью
+- Паводок с временным затоплением низин
+
+Особенности:
+- Плавные переходы между типами погоды
+- Визуальные и звуковые эффекты
+- Команды для администраторов
+- Совместимость с ванильными биомами
+- Оптимизированная производительность
+'''
+
+[[dependencies.enhancedweather]]
+modId="forge"
+mandatory=true
+versionRange="[47.2.0,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.enhancedweather]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.20.1,1.21)"
+ordering="NONE"
+side="BOTH"
